@@ -1,3 +1,4 @@
+import time
 from snake import Snake
 from game_screen import GameScreen
 from food import Food
@@ -17,6 +18,7 @@ def game():
         gameScreen.game_screen_update()
         time.sleep(0.1)
         snake.move()
+
         if snake.head.distance(food) < 15:
             food.refresh()
             scoreboard.update_score()
