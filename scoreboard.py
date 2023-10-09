@@ -1,6 +1,5 @@
 import turtle
 from turtle import Turtle
-from food import Food
 
 NAME_OF_THE_BOARD = "Score: "
 TEXT_POSITION = "Center"
@@ -9,6 +8,8 @@ FONT_SIZE = 16
 FONT_TYPE = "bold"
 FONT_COLOR = "deep pink"
 SCORE_POSITION = [0, 270]
+GAME_OVER = "GAME OVER"
+GAME_OVER_POSITION = [0, 0]
 
 
 class Scoreboard(Turtle):
@@ -27,6 +28,9 @@ class Scoreboard(Turtle):
         self.clear()
         self.write_score()
 
-
     def write_score(self):
         self.write(NAME_OF_THE_BOARD + f"{self.score}", align=TEXT_POSITION, font=(FONT_NAME, FONT_SIZE, FONT_TYPE))
+
+    def game_over(self):
+        self.goto(GAME_OVER_POSITION[0], GAME_OVER_POSITION[1])
+        self.write(GAME_OVER, align=TEXT_POSITION, font=(FONT_NAME, FONT_SIZE, FONT_TYPE))
