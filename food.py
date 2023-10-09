@@ -1,14 +1,13 @@
 import random
 from turtle import Turtle
-from random import Random
 
 FOOD_SHAPE = "circle"
 FOOD_LEN = 0.5
 FOOD_WID = 0.5
 FOOD_COLOR = "green"
 SPEED = "fastest"
-RANDOM_X = [-280, 280]
-RANDOM_Y = [-280, 280]
+RANDOM_X = [-260, 260]
+RANDOM_Y = [-260, 260]
 
 
 class Food(Turtle):
@@ -21,7 +20,6 @@ class Food(Turtle):
         self.color(FOOD_COLOR)
         self.speed(SPEED)
         self.refresh()
-
 
     def refresh(self):
         random_x = random.randint(RANDOM_X[0], RANDOM_X[1])
