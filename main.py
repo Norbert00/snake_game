@@ -24,14 +24,12 @@ def game():
             scoreboard.update_score()
             snake.extend()
         if snake.head.xcor() > 298 or snake.head.xcor() < -298 or snake.head.ycor() > 298 or snake.head.ycor() < -298:
-            game_is_on = False
-            scoreboard.game_over()
-        for segment in snake.segments:
-            if segment == snake.head:
-                pass
-            elif snake.head.distance(segment) < 10:
-                game_is_on = False
-                scoreboard.game_over()
+            scoreboard.reset_scoreboard()
+            snake.reset_snake()
+        for segment in snake.segments[1:]:
+            if snake.head.distance(segment) < 10:
+                scoreboard.reset_scoreboard()
+                snake.reset_snake()
 
 
 game()
